@@ -1,0 +1,19 @@
+ALGORITHM cards
+VAR
+    tab: ARRAY_OF INTEGER[10];
+    i,j,aux: INTEGER;
+BEGIN
+    FOR i FROM 1 TO tab.length    DO
+    read (tab[i]);
+    END_FOR
+    FOR i FROM 1 TO tab.length   DO
+        j=i-1;
+        aux=tab[i];
+        WHILE (j>= 0 and aux<tab[j]) DO
+            tab[j+1]=tab[j];
+            j=j-1
+        END_WHILE
+        tab[j+1]=aux;
+    END_FOR
+    write(tab[j]);
+END
